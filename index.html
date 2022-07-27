@@ -19,15 +19,15 @@
       </div>
    <div class="pillow"> <button class="actionbuttons" type="button" onclick="document.getElementById('randomAlias').value = getRndInteger(1001,999999)">Generate Session ID</button></div>
     <div class="input-container ic1">
-                <input type="text" id="patientLname" name="patientLname" maxlength="90" class="input" value="" placeholder=" " required>
+                <input type="text" id="Lname" name="Lname" maxlength="90" class="input" value="" placeholder=" " required>
                 <div class="cut"></div>
-                <label for="patientLname" class="placeholder">Last Name</label><br>
+                <label for="Lname" class="placeholder">Last Name</label><br>
 
          </div>
          <div class="input-container ic1">  
-                    <input type="text" id="patientID" name="patientID" maxlength="200" class="input" value="" placeholder=" " required><br>
+                    <input type="text" id="description" name="description" maxlength="200" class="input" value="" placeholder=" " required><br>
                     <div class="cut"></div>
-                    <label for="patientID" class="placeholder">Short Description of Issue</label>
+                    <label for="description" class="placeholder">Short Description of Issue</label>
         </div>
       <button id="submit" class="submit" type="submit" onclick="return results();">Generate Link</button>
     </div>
@@ -47,19 +47,19 @@ function getRndInteger(min, max) {
 
 
 
-<!-- Return Join Information for Patient and Provider Based on Input -->
+<!-- Return Join Information Based on Input -->
 
 <script type="text/javascript">
     
 function results(){
   //  var sessionType = document.getElementById('sessionType').value;
     var randomAlias = document.getElementById('randomAlias').value;
-    var patientLname = document.getElementById('patientLname').value;
-    var patientID = document.getElementById('patientID').value;
+    var Lname = document.getElementById('Lname').value;
+    var description = document.getElementById('description').value;
 
     document.write('<html><head><title>Start Your Video Session</title><link rel="stylesheet" type="text/css" href="css/style.css"></head><body>')
-    document.write('<div class="form"><div class="title">You Just Created a Rapid Consultation')
-    document.write('<div class="subtitle">Direct Link to Video Consult<br><br><a class="resultlink" href="https://xmb-hc.pex-gcc.com/webapp/#/?conference=hcp' + randomAlias +'&name=' + patientLname + '%20' + patientID + '&callType=video&role=host&pin=2021" target="_blank">Click Here to Start Video Call</a><br></div><br><br>')
+    document.write('<div class="form"><div class="title">Help is on the way!')
+    document.write('<div class="subtitle">Direct Link to Video Consult<br><br><a class="resultlink" href="https://medical.ck-collab-engtest.com/webapp/#/?conference=manu' + randomAlias +'&name=' + Lname + '%20' + description + '&callType=video&role=host&pin=2022" target="_blank">Click Here to Start Video Call</a><br></div><br><br>')
     document.write('</body></html>') 
 
 }
