@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create a Consultation</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div class="form">
+      <div class="title">Instant Video Visit</div>
+      <div class="subtitle">Complete this Info and Enter Video Queue</div>
+     
+     <div class="input-container ic1">
+        <input type="text" id="randomAlias" name="randomAlias" maxlength="7" class="input" placeholder=" "required>
+        <!-- <input name="sessionalias" id="videoID" class="input" type="text" placeholder=" " /> -->
+        <div class="cut"></div>
+        <label for="videoID" class="placeholder">Session ID</label>
+      </div>
+   <div class="pillow"> <button class="actionbuttons" type="button" onclick="document.getElementById('randomAlias').value = getRndInteger(1001,999999)">Generate ID</button></div>
+    <div class="input-container ic1">
+                <input type="text" id="patientLname" name="patientLname" maxlength="90" class="input" value="" placeholder=" " required>
+                <div class="cut"></div>
+                <label for="patientLname" class="placeholder">Last Name</label><br>
+
+         </div>
+         <div class="input-container ic1">  
+                    <input type="text" id="patientID" name="patientID" maxlength="90" class="input" value="" placeholder=" " required><br>
+                    <div class="cut"></div>
+                    <label for="patientID" class="placeholder">Patient ID</label>
+        </div>
+      <button id="submit" class="submit" type="submit" onclick="return results();">Generate Link</button>
+    </div>
+
+
+
+
+
+
+<script type="text/javascript">
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+</script> 
+
+
+
+
+
+<!-- Return Join Information for Patient and Provider Based on Input -->
+
+<script type="text/javascript">
+    
+function results(){
+  //  var sessionType = document.getElementById('sessionType').value;
+    var randomAlias = document.getElementById('randomAlias').value;
+    var patientLname = document.getElementById('patientLname').value;
+    var patientID = document.getElementById('patientID').value;
+
+    document.write('<html><head><title>Start Your Video Session</title><link rel="stylesheet" type="text/css" href="css/style.css"></head><body>')
+    document.write('<div class="form"><div class="title">You Just Created a Rapid Consultation')
+    document.write('<div class="subtitle">Direct Link to Video Consult<br><br><a class="resultlink" href="https://xmb-hc.pex-gcc.com/webapp/#/?conference=hcp' + randomAlias +'&name=' + patientLname + '%20' + patientID + '&callType=video&role=host&pin=2021" target="_blank">Click Here to Start Video Call</a><br></div><br><br>')
+    document.write('</body></html>') 
+
+}
+
+</script>
+
+
+</body>
+</html>
